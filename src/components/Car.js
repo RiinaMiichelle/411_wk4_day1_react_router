@@ -4,14 +4,30 @@ import cars from '../cars.json'
 // Container, Paper, Chip //
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
+import { makeStyles } from '@material-ui/core/styles';
 import Chip from '@material-ui/core/Chip';
+import Typography from '@material-ui/core/Typography';
 
+const carsById = {};
+cars.forEach(car => {
+    carsById[car.id] = car;
+});
 
 
 const Car = (props) => {
-    let id = props.match.params.id;
+    const id = props.match.params.id;
+    const car = carsById[id];
+
+    if (!car) {
+        return null;
+    }
+
+
     return (
-        <h1>A specific car</h1>
+        <Container maxWidth="sm">
+            <Typography component="div" style={{ backgroundColor: '#cfe8fc', height: '35vh' }} />
+            
+        </Container>
     )
 }
 
