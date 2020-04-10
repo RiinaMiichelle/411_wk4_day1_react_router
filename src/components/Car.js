@@ -5,7 +5,6 @@ import cars from '../cars.json'
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Chip from '@material-ui/core/Chip';
-import { makeStyles } from '@material-ui/core/styles';
 
 
 const carsById = {};
